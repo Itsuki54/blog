@@ -5,7 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #2563eb;
+  --primary: #e97338;
   --secondary: #64748b;
   --accent: #10b981;
   --muted: #d1d5db;
@@ -39,58 +39,4 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: "0xproto", sans-serif;
-}
-
-/* Reset and base styles */
-@layer base {
-  /* 全てのタグに共通するスタイル */
-  * {
-    @apply m-0 p-0 box-border;
-  }
-
-  body {
-    @apply bg-gray-50 text-gray-800 font-sans;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-gray-900;
-  }
-
-  h1 {
-    @apply text-4xl;
-  }
-
-  h2 {
-    @apply text-3xl;
-  }
-
-  h3 {
-    @apply text-2xl;
-  }
-
-  h4 {
-    @apply text-xl;
-  }
-
-  p {
-    @apply text-base leading-relaxed;
-  }
-
-  a {
-    @apply text-blue-500 underline;
-    transition: color 0.2s;
-  }
-
-  a:hover {
-    @apply text-blue-700;
-  }
-
-  ul, ol {
-    @apply list-inside list-disc;
-  }
-
-  button {
-    @apply px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600;
-    transition: background-color 0.2s;
-  }
 }
