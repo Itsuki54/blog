@@ -1,23 +1,90 @@
+'use client'
+
+import { Box, Link as MuiLink, AppBar, Toolbar, Typography } from "@mui/material";
+import CssBaseline from '@mui/material/CssBaseline';
+import Slide from '@mui/material/Slide';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Image from "next/image";
 import Link from "next/link";
+import * as React from 'react';
 
-export const Header = () => (
-  <header className="bg-primary">
-    <div className="flex items-center justify-between max-w-screen-xl mx-auto p-4">
-      <div className="flex items-center space-x-4">
-        <Link aria-label="Home" href="/">
-          <Image alt="itk-blog logo" height={64} src="/logo.png" width={64} />
-        </Link>
-        <nav className="flex space-x-6">
-          <Link className="text-white hover:underline" href="/tags">
-            Tags
-          </Link>
-          <Link className="text-white hover:underline" href="/about">
+type Props ={
+  window?: () => Window;
+  children?: React.ReactElement<unknown>;
+}
+
+function HideOnScroll(props: Props) {
+  const { children, window } = props;
+  const isTriggered = useScrollTrigger({
+    target: window ? window() : undefined,
+  });
+
+  return (
+    <Slide appear={false} direction="down" in={!isTriggered}>
+      {children ?? <div />}
+    </Slide>
+  );
+}
+
+export const Header = ({
+
+}
+) => (
+  <React.Fragment>
+    <HideOnScroll>
+      <AppBar
+        component="header"
+        sx={{
+          backgroundColor: "#e97338",
+        }}
+      >
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+            <Link aria-label="Home" href="/">
+              <Image alt="itk-blog logo" height={48} src="/logo.png" width={48} />
+            </Link>
+          </Box>
+          <Typography
+            component="div"
+            sx={{
+              flexGrow: 1,
+              textAlign: "center",
+              fontWeight: "bold",
+            }}
+            variant="h6"
+          >
+        Itsuki54のブログ
+          </Typography>
+          <nav>
+            <Box sx={{ display: "flex", gap: 3 }}>
+              <MuiLink
+                color="inherit"
+                component={Link}
+                href="/"
+                sx={{ fontWeight: "500" }}
+                underline="hover"
+              >
+            Home
+              </MuiLink>
+              <MuiLink
+                color="inherit"
+                component={Link}
+                href="/about"
+                sx={{ fontWeight: "500" }}
+                underline="hover"
+              >
             About
-          </Link>
-          <button className="bg-primary text-white hover:underline">Search</button>
-        </nav>
-      </div>
-    </div>
-  </header>
+              </MuiLink>
+            </Box>
+          </nav>
+        </Toolbar>
+      </AppBar>
+    </HideOnScroll>
+  </React.Fragment>
 );

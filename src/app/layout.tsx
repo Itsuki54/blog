@@ -1,3 +1,6 @@
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+
+import { Footer } from '@/layouts/footer';
 import { Header } from "@/layouts/header";
 
 import type { Metadata } from "next";
@@ -20,8 +23,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
+        <AppRouterCacheProvider>
+          <header>
+            <Header />
+          </header>
+          <main className="pt-[header-height]">
+            {children}
+          </main>
+          <footer>
+            <Footer />
+          </footer>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

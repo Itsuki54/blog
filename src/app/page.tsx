@@ -1,25 +1,32 @@
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid2";
 import Link from "next/link";
 
+import { Card } from "@/components/card";
 import { client } from "@/lib/client";
 
-import type { EndPoints } from '@/types/cms-types'
+import type { EndPoints } from "@/types/cms-types";
 
 export default async function Home() {
-  const blogs = await client.get<EndPoints['gets']['blogs']>({
+  const blogs = await client.get<EndPoints["gets"]["blogs"]>({
     endpoint: "blogs",
   });
+
   return (
-    <div>
-      <h1>Blog</h1>
-      <ul>
+    <Box sx={{ padding: 4, overflow: "hidden" }}>
+      <Grid
+        container
+        spacing={2}
+        sx={{ justifyContent: "center", alignItems: "stretch" }}
+      >
         {blogs.contents.map((blog) => (
-          <li key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>
-              <div>{blog.title}</div>
-            </Link>
-          </li>
+          <Grid key={blog.id}>
+            <Box sx={{ height: "100%" }}>
+              <Card blog={blog} />
+            </Box>
+          </Grid>
         ))}
-      </ul>
-    </div>
+      </Grid>
+    </Box>
   );
 }
