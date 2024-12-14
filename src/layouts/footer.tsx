@@ -1,8 +1,8 @@
-import { AppBar, Box, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Toolbar, Link } from "@mui/material";
 
 export const Footer = () => (
   <AppBar
-    position="relative"
+    position="fixed"
     sx={{
       top: "auto",
       bottom: 0,
@@ -17,9 +17,17 @@ export const Footer = () => (
         alignItems: "center",
       }}
     >
-      <Typography component="div" variant="body1">
+      <Link href="https://itk-koshiishi.net/"
+        sx={{
+          color: "white",
+          textDecoration: "none",
+          "&:hover": {
+            textDecoration: "underline",
+          },
+        }}
+      >
         © 2024 Itsuki54
-      </Typography>
+      </Link>
     </Toolbar>
   </AppBar>
 );

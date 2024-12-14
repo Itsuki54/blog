@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 import { Footer } from '@/layouts/footer';
@@ -24,15 +25,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AppRouterCacheProvider>
-          <header>
-            <Header />
-          </header>
-          <main className="pt-[header-height]">
+          <Header />
+          <Box sx={{ padding: 8, overflow: "hidden", paddingBlock: 8, display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
             {children}
-          </main>
-          <footer>
-            <Footer />
-          </footer>
+          </Box>
+          <Footer />
         </AppRouterCacheProvider>
       </body>
     </html>

@@ -1,6 +1,6 @@
+import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid2";
-import Link from "next/link";
 
 import { Card } from "@/components/card";
 import { client } from "@/lib/client";
@@ -13,20 +13,23 @@ export default async function Home() {
   });
 
   return (
-    <Box sx={{ padding: 4, overflow: "hidden" }}>
+    <>
+      <Typography sx={{ textAlign: "start", fontWeight: "bold",padding:2 }} variant="h4">
+        記事一覧
+      </Typography>
       <Grid
         container
         spacing={2}
-        sx={{ justifyContent: "center", alignItems: "stretch" }}
+        sx={{ justifyContent: "center" }}
       >
         {blogs.contents.map((blog) => (
-          <Grid key={blog.id}>
+          <Grid key={blog.id} sx={{ display: "flex", justifyContent: "flex-start" }}>
             <Box sx={{ height: "100%" }}>
               <Card blog={blog} />
             </Box>
           </Grid>
         ))}
       </Grid>
-    </Box>
+    </>
   );
 }

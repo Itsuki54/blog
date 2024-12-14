@@ -16,6 +16,7 @@
     "@mui/icons-material": "^6.2.0",
     "@mui/material": "^6.2.0",
     "@mui/material-nextjs": "^6.2.0",
+    "dompurify": "^3.2.3",
     "html-react-parser": "^5.2.0",
     "microcms-js-sdk": "^3.1.2",
     "microcms-lib": "^1.0.4",

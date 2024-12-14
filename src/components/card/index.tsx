@@ -58,8 +58,8 @@ export const Card = ({ blog }: { blog: blogs }) => (
           color="textSecondary"
           position="absolute"
           sx={{
-            bottom: 4,
-            right: 4,
+            bottom: 8,
+            right: 8,
             color: "#555",
             fontSize: "0.9rem",
           }}

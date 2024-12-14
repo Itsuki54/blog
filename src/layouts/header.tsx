@@ -26,10 +26,7 @@ function HideOnScroll(props: Props) {
   );
 }
 
-export const Header = ({
-
-}
-) => (
+export const Header = () => (
   <React.Fragment>
     <HideOnScroll>
       <AppBar
@@ -41,8 +38,8 @@ export const Header = ({
         <Toolbar
           sx={{
             display: "flex",
-            justifyContent: "space-between",
             alignItems: "center",
+            justifyContent: "space-between",
           }}
         >
           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
@@ -50,17 +47,19 @@ export const Header = ({
               <Image alt="itk-blog logo" height={48} src="/logo.png" width={48} />
             </Link>
           </Box>
+
           <Typography
             component="div"
             sx={{
-              flexGrow: 1,
               textAlign: "center",
               fontWeight: "bold",
+              flexGrow: 1,
             }}
             variant="h6"
           >
-        Itsuki54のブログ
+            Itsuki54のブログ
           </Typography>
+
           <nav>
             <Box sx={{ display: "flex", gap: 3 }}>
               <MuiLink
@@ -70,7 +69,7 @@ export const Header = ({
                 sx={{ fontWeight: "500" }}
                 underline="hover"
               >
-            Home
+                Home
               </MuiLink>
               <MuiLink
                 color="inherit"
@@ -79,7 +78,7 @@ export const Header = ({
                 sx={{ fontWeight: "500" }}
                 underline="hover"
               >
-            About
+                About
               </MuiLink>
             </Box>
           </nav>
