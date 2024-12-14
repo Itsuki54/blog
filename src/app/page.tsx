@@ -14,7 +14,7 @@ export default async function Home() {
 
   return (
     <>
-      <Typography sx={{ textAlign: "start", fontWeight: "bold",padding:2 }} variant="h4">
+      <Typography sx={{ textAlign: "start", fontWeight: "bold", padding: 2 }} variant="h4">
         記事一覧
       </Typography>
       <Grid

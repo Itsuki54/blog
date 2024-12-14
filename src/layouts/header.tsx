@@ -1,17 +1,17 @@
-'use client'
+"use client";
 
-import { Box, Link as MuiLink, AppBar, Toolbar, Typography } from "@mui/material";
-import CssBaseline from '@mui/material/CssBaseline';
-import Slide from '@mui/material/Slide';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
+import { AppBar, Box, Link as MuiLink, Toolbar, Typography } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
+import Slide from "@mui/material/Slide";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
-import * as React from 'react';
+import * as React from "react";
 
-type Props ={
+type Props = {
   window?: () => Window;
   children?: React.ReactElement<unknown>;
-}
+};
 
 function HideOnScroll(props: Props) {
   const { children, window } = props;

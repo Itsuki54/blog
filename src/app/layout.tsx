@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 
-import { Footer } from '@/layouts/footer';
+import { Footer } from "@/layouts/footer";
 import { Header } from "@/layouts/header";
 
 import type { Metadata } from "next";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "itk's blog",
   icons: {
     icon: "/favicon.ico",
-  }
+  },
 };
 
 export default function RootLayout({
@@ -26,7 +26,17 @@ export default function RootLayout({
       <body>
         <AppRouterCacheProvider>
           <Header />
-          <Box sx={{ padding: 8, overflow: "hidden", paddingBlock: 8, display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
+          <Box
+            sx={{
+              padding: 8,
+              overflow: "hidden",
+              paddingBlock: 8,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+            }}
+          >
             {children}
           </Box>
           <Footer />

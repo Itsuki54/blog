@@ -1,4 +1,4 @@
-import { AppBar, Box, Toolbar, Link } from "@mui/material";
+import { AppBar, Box, Link, Toolbar } from "@mui/material";
 
 export const Footer = () => (
   <AppBar
@@ -17,7 +17,8 @@ export const Footer = () => (
         alignItems: "center",
       }}
     >
-      <Link href="https://itk-koshiishi.net/"
+      <Link
+        href="https://itk-koshiishi.net/"
         sx={{
           color: "white",
           textDecoration: "none",
