@@ -1,4 +1,4 @@
-type Reference<T, R> = T extends "get" ? R : string | null;
+type Reference<T, R> = T extends 'get' ? R : string | null;
 interface GetsType<T> {
   contents: T[];
   totalCount: number;
@@ -11,11 +11,11 @@ type DateType = {
   publishedAt: string;
   revisedAt: string;
 };
-type Structure<T, P> = T extends "get" ? { id: string } & DateType & Required<P>
-  : T extends "gets" ? GetsType<{ id: string } & DateType & Required<P>>
-  : Partial<DateType> & (T extends "patch" ? Partial<P> : P);
+type Structure<T, P> = T extends 'get' ? { id: string; } & DateType & Required<P>
+  : T extends 'gets' ? GetsType<{ id: string; } & DateType & Required<P>>
+  : Partial<DateType> & (T extends 'patch' ? Partial<P> : P);
 
-export type categories<T = "get"> = Structure<
+export type categories<T = 'get'> = Structure<
   T,
   {
     /**
@@ -29,7 +29,7 @@ export type categories<T = "get"> = Structure<
   }
 >;
 
-export type blogs<T = "get"> = Structure<
+export type blogs<T = 'get'> = Structure<
   T,
   {
     /**
@@ -43,7 +43,7 @@ export type blogs<T = "get"> = Structure<
     /**
      * アイキャッチ
      */
-    eyecatch?: { url: string; width: number; height: number };
+    eyecatch?: { url: string; width: number; height: number; };
     /**
      * カテゴリ
      */
@@ -53,23 +53,23 @@ export type blogs<T = "get"> = Structure<
 
 export interface EndPoints {
   get: {
-    "categories": categories<"get">;
-    "blogs": blogs<"get">;
+    categories: categories<'get'>;
+    blogs: blogs<'get'>;
   };
   gets: {
-    "categories": categories<"gets">;
-    "blogs": blogs<"gets">;
+    categories: categories<'gets'>;
+    blogs: blogs<'gets'>;
   };
   post: {
-    "categories": categories<"post">;
-    "blogs": blogs<"post">;
+    categories: categories<'post'>;
+    blogs: blogs<'post'>;
   };
   put: {
-    "categories": categories<"put">;
-    "blogs": blogs<"put">;
+    categories: categories<'put'>;
+    blogs: blogs<'put'>;
   };
   patch: {
-    "categories": categories<"patch">;
-    "blogs": blogs<"patch">;
+    categories: categories<'patch'>;
+    blogs: blogs<'patch'>;
   };
 }

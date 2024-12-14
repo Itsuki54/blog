@@ -1,29 +1,34 @@
-import { AppBar, Box, Link, Toolbar } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Link,
+  Toolbar,
+} from '@mui/material';
 
 export const Footer = () => (
   <AppBar
-    position="fixed"
+    position='fixed'
     sx={{
-      top: "auto",
+      top: 'auto',
       bottom: 0,
-      marginTop: "auto",
-      backgroundColor: "#e97338",
+      marginTop: 'auto',
+      backgroundColor: '#e97338',
     }}
   >
     <Toolbar
       sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
     >
       <Link
-        href="https://itk-koshiishi.net/"
+        href='https://itk-koshiishi.net/'
         sx={{
-          color: "white",
-          textDecoration: "none",
-          "&:hover": {
-            textDecoration: "underline",
+          'color': 'white',
+          'textDecoration': 'none',
+          '&:hover': {
+            textDecoration: 'underline',
           },
         }}
       >
