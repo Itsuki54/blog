@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "format": "dprint fmt",
+    "type:generate": "microcms-typescript src/schema src/types/cms-types.ts"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -26,6 +28,8 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@iconify/react": "^5.1.0",
+    "@types/dompurify": "^3.2.0",
     "@types/node": "^20.17.9",
     "@types/react": "^19",
     "@types/react-dom": "^19",

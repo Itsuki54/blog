@@ -35,19 +35,19 @@ export type blogs<T = 'get'> = Structure<
     /**
      * タイトル
      */
-    title?: string;
+    title: string;
     /**
      * 内容
      */
-    content?: any;
+    content: any;
     /**
      * アイキャッチ
      */
-    eyecatch?: { url: string; width: number; height: number; };
+    eyecatch: { url: string; width: number; height: number; };
     /**
      * カテゴリ
      */
-    category?: Reference<T, unknown | null>;
+    categories?: Reference<T, categories<T>>[];
   }
 >;
 
