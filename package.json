@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "format": "dprint fmt",
+    "check": "eslint . && dprint check",
     "type:generate": "microcms-typescript src/schema src/types/cms-types.ts",
     "prepare": "husky"
   },
