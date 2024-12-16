@@ -1,36 +1,14 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Tech Blog
 
-## Getting Started
+このプロジェクトは、開発者のプロフィールとブログを紹介するためのポートフォリオサイトです。このサイトは、Next.jsとMaterial-UIを使用して作成されています。
 
-First, run the development server:
+## 技術スタック
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Next.js** (`next`): サーバサイドレンダリング（SSR）と静的サイト生成（SSG）に対応したReactフレームワーク。`next dev --turbopack` コマンドを使って開発サーバーを高速化しています。
+- **React** (`react`, `react-dom`): ユーザーインターフェースの構築に使用するライブラリです。
+- **TypeScript** (`typescript`, `@types/*`): 静的型付けを提供するTypeScriptを使用して、型安全なコードを開発しています。
+- **Material-UI** (`@mui/material`, `@mui/icons-material`): UIコンポーネントライブラリで、デザインに基づいた美しいコンポーネントを提供します。
+- **MicroCMS** (`microcms-js-sdk`, `microcms-lib`): コンテンツ管理のためのヘッドレスCMSで、ブログやページのデータ管理を行っています。
+- **Dprint** (`dprint`): コードの自動フォーマッティングツールです。`dprint fmt` でコードを整形します。
+- **Husky** (`husky`): Gitフックを利用して、`pre-commit` フックで `lint-staged` を実行し、コミット前にコードの品質チェックをしています。
+- **ESLint** (`eslint`, `@typescript-eslint/*`): コード品質を保つための静的解析ツールです。`lint:fix` コマンドで自動修正も行います。
