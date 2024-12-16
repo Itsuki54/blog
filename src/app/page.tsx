@@ -25,7 +25,7 @@ export default async function Home() {
         {blogs.contents.map(blog => (
           <Grid key={blog.id} sx={{ display: 'flex', justifyContent: 'flex-start' }}>
             <Box sx={{ height: '100%' }}>
-              <Card blog={blog} />
+              <Card blog={blog as any} />
             </Box>
           </Grid>
         ))}

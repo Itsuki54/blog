@@ -19,7 +19,7 @@ export default async function Blog({ params }: { params: { id: string; }; }) {
   });
 
   return (
-    <Container maxWidth='md' sx={{ py: 4 }}>
+    <Container maxWidth='lg' sx={{ py: 4 }}>
       <Typography
         component='h1'
         gutterBottom
@@ -31,10 +31,8 @@ export default async function Blog({ params }: { params: { id: string; }; }) {
       >
         {blog.title}
       </Typography>
-      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
-        {blog.categories?.map(category => (
-          <Tag category={category} key={category.id} />
-        ))}
+      <Box sx={{ display: 'flex', gap: 2 }}>
+        {blog.categories?.map(category => <Tag category={category} key={category.id} />)}
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'end', gap: 2 }}>
         <Typography color='textSecondary' gutterBottom variant='subtitle1'>

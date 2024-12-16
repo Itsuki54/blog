@@ -15,6 +15,7 @@
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@iconify/json": "^2.2.282",
     "@mui/icons-material": "^6.2.0",
     "@mui/material": "^6.2.0",
     "@mui/material-nextjs": "^6.2.0",
@@ -25,7 +26,8 @@
     "microcms-lib": "^1.0.4",
     "next": "15.0.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tocbot": "^4.32.2"
   },
   "devDependencies": {
     "@iconify/react": "^5.1.0",

@@ -1,15 +1,28 @@
 'use client';
 
 import { Box } from '@mui/material';
-import DOMPurify from 'dompurify';
+import { useEffect } from 'react';
+import tocbot from 'tocbot';
 
-export const Article = ({ content }: { content: string; }) => (
-  <Box
-    dangerouslySetInnerHTML={{ __html: content }}
-    sx={{
-      'mt': 4,
-      '& img': { maxWidth: '100%', height: 'auto' },
-      '& p': { marginBottom: 2 },
-    }}
-  />
-);
+import { Agenda } from './agenda';
+import { Content } from './content';
+
+export const Article = ({ content }: { content: string; }) => {
+  useEffect(() => {
+    tocbot.init({
+      tocSelector: '.js-toc',
+      contentSelector: '.js-toc-content',
+      headingSelector: 'h1, h2, h3, h4',
+      scrollSmooth: true,
+    });
+
+    return () => tocbot.destroy();
+  }, []);
+
+  return (
+    <Box sx={{ display: 'flex', overflow: 'hidden' }}>
+      <Content content={content} />
+      <Agenda />
+    </Box>
+  );
+};

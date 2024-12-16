@@ -7,9 +7,9 @@ import {
 } from '@mui/material';
 import Image from 'next/image';
 
-import { blogs } from '@/types/cms-types';
+import type { EndPoints } from '@/types/cms-types';
 
-export const Card = ({ blog }: { blog: blogs; }) => (
+export const Card = ({ blog }: { blog: EndPoints['get']['blogs']; }) => (
   <MuiCard
     sx={{
       border: '1px solid #e97338',
