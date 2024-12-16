@@ -28,8 +28,6 @@ export default function RootLayout({
           <Header />
           <Box
             sx={{
-              padding: 8,
-              overflow: 'hidden',
               paddingBlock: 8,
               display: 'flex',
               justifyContent: 'center',

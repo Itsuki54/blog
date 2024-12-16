@@ -1,10 +1,18 @@
-import { Box } from '@mui/material';
+import {
+  Box,
+  SxProps,
+  Theme,
+} from '@mui/material';
 
-export const Agenda = () => (
+type Props = {
+  sx?: SxProps<Theme>;
+};
+
+export const Agenda = ({ sx }: Props) => (
   <Box
     className='js-toc'
     sx={{
-      'width': 200,
+      ...sx,
       'padding': 1,
       'position': 'sticky',
       'overflowY': 'auto',

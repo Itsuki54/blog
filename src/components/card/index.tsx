@@ -7,12 +7,13 @@ import {
 } from '@mui/material';
 import Image from 'next/image';
 
+import { Tag } from '@/components/tag';
+
 import type { EndPoints } from '@/types/cms-types';
 
 export const Card = ({ blog }: { blog: EndPoints['get']['blogs']; }) => (
   <MuiCard
     sx={{
-      border: '1px solid #e97338',
       borderRadius: 2,
       backgroundColor: '#f8f8f8',
       width: 300,
@@ -72,8 +73,11 @@ export const Card = ({ blog }: { blog: EndPoints['get']['blogs']; }) => (
           }}
           variant='body2'
         >
-          {new Date(blog.publishedAt).toLocaleDateString()}
+          {new Date(blog.updatedAt).toLocaleDateString()}
         </Typography>
+        {blog.categories?.map(
+          category => <Tag category={category} key={category.id} />,
+        )}
       </CardContent>
     </CardActionArea>
   </MuiCard>

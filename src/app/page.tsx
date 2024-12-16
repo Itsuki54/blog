@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
 
 import { Card } from '@/components/card';
+import { Heading } from '@/components/heading';
 import { client } from '@/lib/client';
 
 import type { EndPoints } from '@/types/cms-types';
@@ -14,16 +15,19 @@ export default async function Home() {
 
   return (
     <>
-      <Typography sx={{ textAlign: 'start', fontWeight: 'bold', padding: 2 }} variant='h4'>
+      <Heading>
         記事一覧
-      </Typography>
+      </Heading>
       <Grid
         container
         spacing={2}
         sx={{ justifyContent: 'center' }}
       >
         {blogs.contents.map(blog => (
-          <Grid key={blog.id} sx={{ display: 'flex', justifyContent: 'flex-start' }}>
+          <Grid
+            key={blog.id}
+            sx={{ display: 'flex', justifyContent: 'flex-start', md: 4, sm: 6, xs: 12 }}
+          >
             <Box sx={{ height: '100%' }}>
               <Card blog={blog as any} />
             </Box>

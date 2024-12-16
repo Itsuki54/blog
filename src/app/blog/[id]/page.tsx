@@ -1,4 +1,3 @@
-import { Icon } from '@iconify/react';
 import {
   Box,
   Container,
@@ -6,6 +5,7 @@ import {
 } from '@mui/material';
 
 import { Article } from '@/components/article';
+import { Heading } from '@/components/heading';
 import { Tag } from '@/components/tag';
 import { client } from '@/lib/client';
 
@@ -19,19 +19,11 @@ export default async function Blog({ params }: { params: { id: string; }; }) {
   });
 
   return (
-    <Container maxWidth='lg' sx={{ py: 4 }}>
-      <Typography
-        component='h1'
-        gutterBottom
-        sx={{
-          fontWeight: 'bold',
-          textAlign: 'center',
-        }}
-        variant='h4'
-      >
+    <Container maxWidth='lg'>
+      <Heading>
         {blog.title}
-      </Typography>
-      <Box sx={{ display: 'flex', gap: 2 }}>
+      </Heading>
+      <Box sx={{ display: 'flex', gap: 2, padding: 1 }}>
         {blog.categories?.map(category => <Tag category={category} key={category.id} />)}
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'end', gap: 2 }}>

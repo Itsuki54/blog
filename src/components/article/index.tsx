@@ -21,8 +21,19 @@ export const Article = ({ content }: { content: string; }) => {
 
   return (
     <Box sx={{ display: 'flex', overflow: 'hidden' }}>
-      <Content content={content} />
-      <Agenda />
+      <Content content={content} sx={{ width: '80%' }} />
+      <Agenda
+        sx={{
+          width: {
+            xs: '0',
+            sm: '20%',
+          },
+          display: {
+            xs: 'none',
+            sm: 'block',
+          },
+        }}
+      />
     </Box>
   );
 };
